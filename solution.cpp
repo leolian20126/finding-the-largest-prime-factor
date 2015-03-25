@@ -13,14 +13,14 @@ int main()
 {
     int k = 1;
     int i, j, n;
-    memset(prime,0,sizeof(prime));
+    memset(prime,0,sizeof(prime)); //initialize the array with 0
 
-    for(i = 2; i < MAXN; i++)
+    for(i = 2; i < MAXN; i++) // cause prime[0] = 1, so start from 2
     {
-        if (!prime[i])
+        if (!prime[i]) // if prime[i] not been assigned
         {
             prime[i] = k;
-            for(j = i; j < MAXN; j+=i)
+            for(j = i; j < MAXN; j+=i) // all fators come from i, such i=2, j=2,4,6,8.., i=3, j=3,6,9,12..
             {
                 prime[j] = k;
             }
